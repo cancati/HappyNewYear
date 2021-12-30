@@ -37,9 +37,9 @@ const Counter = ({ deadline }) => {
   return (
     <div className="Container" style={leading0(seconds)==='00' ? { backgroundColor:'#d90429'} : { backgroundColor:'transparent'}  }>
         {leading0(days) === '00' ? <div className="box"><h1 style={{fontWeight:"lighter"}}> Happy</h1></div> : <div className="box"><h1>{leading0(days)}</h1> <h3 className="text">Days</h3></div> }
-        {leading0(hours) === '00' ? <div className="box"><h1 style={{fontWeight:"lighter"}}> New</h1></div> :<div className="box"><h1>{leading0(hours)}</h1> <h3 className="text">Hours</h3></div> }
+        {leading0(hours) === '00' && leading0(days) === '00' ? <div className="box"><h1 style={{fontWeight:"lighter"}}> New</h1></div> :<div className="box"><h1>{leading0(hours)}</h1> <h3 className="text">Hours</h3></div> }
         {leading0(minutes) === '00' ? <div className="box"><h1 style={{fontWeight:"lighter"}}> Year</h1></div>:<div className="box"><h1>{leading0(minutes)}</h1> <h3 className="text">Minutes</h3></div>  }
-        {leading0(seconds)==='00' ? <div className="box">
+        {leading0(seconds)==='00' && leading0(minutes) === '00' ? <div className="box">
             <a href="https://www.change.org/p/yeni-kanun-da-hayvanlar%C4%B1-korumuyor-baz%C4%B1-maddeleriyle-eskisinden-%C3%A7ok-daha-k%C3%B6t%C3%BC-uygulamalar-getiren-bu-yasayla-ilgili-itirazlara-kulak-vermenizi-rica-ediyorum-avozlemzengin?source_location=petitions_browse"><img alt='Happy New Year' src={logo}/>
             </a> <h6 style={{fontSize:'8px',position:'relative',alignSelf:'center',fontWeight:'400'}} >Click Me !</h6></div>  :  <div className="box"><h1>{leading0(seconds)}</h1> <h3 className="text">Seconds</h3></div>  }
      
