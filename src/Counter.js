@@ -35,7 +35,7 @@ const Counter = ({ deadline }) => {
   }, [deadline]);
 
   return (
-    <div className="Container" style={leading0(seconds)==='00' ? { backgroundColor:'#d90429'} : { backgroundColor:'transparent'}  }>
+    <div className="Container" style={leading0(seconds)==='00' && leading0(minutes) === '00'  ? { backgroundColor:'#d90429'} : { backgroundColor:'transparent'}  }>
         {leading0(days) === '00' ? <div className="box"><h1 style={{fontWeight:"lighter"}}> Happy</h1></div> : <div className="box"><h1>{leading0(days)}</h1> <h3 className="text">Days</h3></div> }
         {leading0(hours) === '00' && leading0(days) === '00' ? <div className="box"><h1 style={{fontWeight:"lighter"}}> New</h1></div> :<div className="box"><h1>{leading0(hours)}</h1> <h3 className="text">Hours</h3></div> }
         {leading0(minutes) === '00' ? <div className="box"><h1 style={{fontWeight:"lighter"}}> Year</h1></div>:<div className="box"><h1>{leading0(minutes)}</h1> <h3 className="text">Minutes</h3></div>  }
